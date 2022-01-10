@@ -1,4 +1,4 @@
-console.log('lesson 2');
+ console.log('lesson 2');
 
 // Lexical environment
 // http://jsflow.org/docs/lex-env/
@@ -222,6 +222,6 @@ printReverseLists(list);
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
-// just a plug
+//just a plug
 export default () => {
 };
