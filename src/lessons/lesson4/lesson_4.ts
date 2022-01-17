@@ -1,3 +1,5 @@
+import {log} from "util";
+
 console.log('lesson 4');
 
 // http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
@@ -93,7 +95,7 @@ console.log('lesson 4');
 // console.log(7);
 
 //Task 6
-
+//
 // setTimeout(() => console.log(1), 0);
 // console.log(2);
 // new Promise((resolve, reject) => {
@@ -157,23 +159,58 @@ console.log('lesson 4');
 // В конструкторе промиса выведите в консоль сообщение "Promise is created".
 
 
+// let pr = new Promise((resolve, reject) => {
+//     console.log("Promise is created")
+// });
+// console.log(pr);
+
+
 // Task 02
 // Создайте промис, который после создания сразу же переходит в состояние resolve
 // и возвращает строку 'Promise Data'
 // Получите данные промиса и выведите их в консоль
 
+// let pr=new Promise((res,rej)=>{
+//     res('Promise Data')
+// })
+// pr.then(res=>{
+//     console.log('res:',res)
+// })
+// console.log(pr)
+// let pr1 =Promise.resolve('Promise Data');
+// console.log(pr1);
 
 // Task 03
 // Создайте промис, который после создания сразу же переходит в состояние rejected
 // и возвращает строку 'Promise Error'
 // Получите данные промиса и выведите их в консоль
 
+// let pr = new Promise((res, rej) => {
+//     rej('Promise Error')
+// })
+// pr.
+// catch(rej=>{
+//     console.log('rej:',rej)
+// })
+// console.log(pr)
+// let pr1 = Promise.reject('Promise Error');
+// console.log(pr1);
 
 // Task 04
 // Создайте промис, который переходит в состояние resolved через 3с.
 // (Используйте setTimeout)
 // и возвращает строку 'Promise Data'
 // Получите данные промиса и выведите их в консоль
+
+// let pr=new Promise((res,rej)=>{
+//     setTimeout(()=>{
+//         res('Promise Data')
+//     },3000)
+// })
+// pr.then(res=>{
+//     console.log('fulfilled:',res)
+// })
+// console.log(pr);
 
 
 // Task 05
@@ -201,7 +238,7 @@ const someObj: objType = {
     promise: null,
     resolve: null,
     reject: null,
-    onSuccess(paramName: string)  {
+    onSuccess(paramName: string) {
         console.log(`Promise is resolved with data: ${paramName}`);
     },
     onError(paramName: string) {
@@ -231,15 +268,35 @@ export const rejectPromise = () => {
 }
 
 
-
-
-
 // Task 06
 // Создайте промис, который через 1 с возвращает строку "My name is".
 // Создайте функцию onSuccess, которая получает один параметр,
 // прибавляет к нему Ваше имя и возвращает новую строку из функции
 // Создайте функцию print, которая выводит в консоль значение своего параметра
 // Добавьте два метода then и передайте созданные функции.
+
+// let pr = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         return res("My name is ")
+//     }, 1000)
+// })
+// pr
+//     .then(res=>{
+//         console.log(onSuccess(res,'Sergey'))
+//         }
+//     )
+//     .then(res1 => {
+//         console.log('res1',res1)
+//         print(res1)
+//     })
+// function onSuccess(param: any,param2:any) {
+//     return param + param2
+// }
+//
+// function print(param: any) {
+//     return console.log(param)
+// }
+// console.log(pr)
 
 
 // Task 7
@@ -248,7 +305,27 @@ export const rejectPromise = () => {
 // Получите результаты работы промисов, объедините свойства объектов
 // и выведите в консоль {name, age, city}
 
-
+let pr1=new Promise(res=>{
+    setTimeout(()=>{
+        return res({ name: "Anna" } )
+    },2000)
+})
+let pr2=new Promise(res=>{
+    setTimeout(()=>{
+        return res({age: 16} )
+    },3000)
+})
+let pr3=new Promise(res=>{
+    setTimeout(()=>{
+        return res({city: ''})
+    },4000)
+})
+Promise.all([pr1,pr2,pr3])
+    .then(values => {
+        const  [pr1,pr2,pr3]=values
+        console.log(pr1,pr2,pr3)
+    })
 
 // just a plug
-export default ()=>{};
+export default () => {
+};
