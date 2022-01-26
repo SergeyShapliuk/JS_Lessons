@@ -69,7 +69,7 @@ let makeCounters=(function () {
             return count-1
         },
         reset:function (){
-            return count
+            return count=0
         },
         set:function (){
             return count

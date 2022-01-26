@@ -1,4 +1,4 @@
-import {log} from "util";
+
 
 console.log('lesson 4');
 
@@ -322,8 +322,8 @@ let pr3=new Promise(res=>{
 })
 Promise.all([pr1,pr2,pr3])
     .then(values => {
-        const  [pr1,pr2,pr3]=values
-        console.log(pr1,pr2,pr3)
+const promises=Object.assign(values[0],values[1],values[2])
+        console.log(promises)
     })
 
 // just a plug
