@@ -1,4 +1,4 @@
-import {log} from "util";
+
 
 
 console.log('Lesson 5');
@@ -23,19 +23,19 @@ console.log('Lesson 5');
 // https://learn.javascript.ru/call-apply-decorators
 // https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%BE-%D0%BE-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0%D1%85-apply-call-%D0%B8-bind-%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D1%85-%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83-javascript-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D1%83-ddd5f9b06290
 
-
+//
 // function Person(name, age) {
 //     this.name = name;
 //     this.age = age;
 //     this.sumFunc = function(){}
 //     return [10];
 // }
-
+//
 // Person.prototype.sumFunc = function(){};
 // //
 // let evgenObj = new Person('Evgen', 33);
 // console.log(evgenObj);
-//
+
 // function somePerson (name, age) {
 //     return {
 //         name,
@@ -47,7 +47,7 @@ console.log('Lesson 5');
 // let vladObj = somePerson('Vlad', 33);
 // console.log(vladObj);
 
-
+//
 // function Person(name, age) {
 //     "use strict";
 //     this.name = name;
@@ -417,20 +417,20 @@ console.log('Lesson 5');
 // Дан объект someObj, реализуйте функцию greeting и присвойте ее ключу объекта с аналогичным именем.
 // Функция должна вернуть строку `My name is ${name}. I am ${age}`, где name и age берутся из свойств объекта
 //
-// type someObjType = {
-//     name: string;
-//     age: number;
-//     greeting:()=>void
-// }
-//
-// let someObj:someObjType = {
-//     name: 'Eugene',
-//     age: 32,
-//     greeting:function greeting(){
-//         return console.log(`My name is ${this.name}. I am ${this.age}`)
-//     }
-// }
-// // someObj.greeting();
+type someObjType = {
+    name: string;
+    age: number;
+    greeting:()=>void
+}
+
+let someObj:someObjType = {
+    name: 'Eugene',
+    age: 32,
+    greeting:function greeting(){
+        return console.log(`My name is ${this.name}. I am ${this.age}`)
+    }
+}
+someObj.greeting();
 
 // Task 02
 // реализовать счетчик counter в виде объекта со следующими методами:
@@ -512,28 +512,28 @@ console.log('Lesson 5');
 // Написать функцию конструктор myFirstConstructorFunc которая принимает 2 параметра name и age и возвращает объект
 // у которого будут эти свойства и метод greeting из Task 01
 
-// type myFirstConstructorFuncTy={
-//     name:string
-//     age:number
-//     greeting:any
-// }
-// function myFirstConstructorFunc(name:string,age:string){
-//     this.name
-//     this.age
-//     return {name:this.name}
-// }
-//
+type myFirstConstructorFuncTy={
+    name:string
+    age:number
+    greeting:any
+}
+const myFirstConstructorFunc=new Function()
+
+
+
+
+
 //
 //
 //
 // Task 05 есть 2 объекта One и Two. С помощью bind и метода sayHello заставьте поздороваться объект One
 
-let One = {name: 'One'};
-let Two = {
-    name: 'Two', sayHello: function () {
-        console.log(`Hello, my name is ${this.name}`)
-    }
-};
+// let One = {name: 'One'};
+// let Two = {
+//     name: 'Two', sayHello: function () {
+//         console.log(`Hello, my name is ${this.name}`)
+//     }
+// };
 // Two.sayHello.bind(One)()
 
 // Task 06

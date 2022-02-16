@@ -12,8 +12,63 @@ console.log('Lesson 7');
 
 // https://www.youtube.com/watch?v=aQkgUUmUJy4&t=21s
 // https://www.youtube.com/watch?v=b55hiUlhAzI
-
-
+///task-1
+// let animal = {
+//     jumps: null
+// };
+// let rabbit = {
+//     __proto__: animal,
+//     jumps: true
+// };
+//
+// alert( rabbit.jumps ); // ? (1)
+//
+// // @ts-ignore
+// delete rabbit.jumps;
+//
+// alert( rabbit.jumps ); // ? (2)
+//
+// // @ts-ignore
+// delete animal.jumps;
+//
+// alert( rabbit.jumps ); // ? (3)
+//task-2
+// let head = {
+//     glasses: 1,
+//
+// };
+//
+// let table = {
+//     pen: 3,
+//     _proto_:head
+// };
+//
+// let bed = {
+//     sheet: 1,
+//     pillow: 2,
+//     _proto_: table
+// };
+//
+// let pockets = {
+//     money: 2000,
+//     _proto_:bed
+// };
+// console.log('pocket',pockets._proto_._proto_._proto_.glasses)
+//
+// console.log('head',head.glasses)
+//task-3
+// let animal = {
+//     eat() {
+//         // @ts-ignore
+//         this.full = true;
+//     }
+// };
+//
+// let rabbit = {
+//     __proto__: animal
+// };
+//
+// rabbit.eat();
 //Task 01
 // Реализовать класс Animal который принимает name(по умолчанию 'Animal') в качестве параметра, у которого будет 3
 // метода walk, eat, sleep - каждый метод должен выводить в консоль строку имя + действие. Пример:

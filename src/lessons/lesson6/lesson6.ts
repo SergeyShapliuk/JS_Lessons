@@ -1,5 +1,3 @@
-
-
 console.log('Lesson 6');
 
 // Class
@@ -298,8 +296,57 @@ console.log('Lesson 6');
 //     }
 // }
 
-// just a plug
-    export
 
-    default() => {
+class Test {
+    name
+    age
+
+    constructor(name: string, age: number) {
+        this.name = name
+        this.age = age
+    }
+
+    sayHello() {
+        console.log("Hello")
+    }
+
+    // sayHello2 = () => {
+    //     console.log("arrow Hello")
+    // }
+}
+
+let obj = new Test('Sergey', 43)
+console.log(obj)
+// obj.sayHello()
+// // obj.sayHello2()
+// obj.name="Alex"
+// console.log(obj)
+
+class Test2 extends Test{
+public city
+    constructor(name:string,age:number,city:string) {
+        super(name,age);
+        this.city=city
+
+    }
+    // sayHello() {
+    //     super.sayHello()
+    // }
+    // sayHello2=()=>{
+    //     console.log("Hellllllloooooooo")
+    // }
+    public say(){
+    return this.city='Minsk'
+    }
+
+}
+let obj2=new Test2('Alexis',17,'Borisov')
+console.log(obj2)
+console.log(obj2.city)
+console.log(obj2.say())
+console.log(obj2)
+// obj2.sayHello2()
+// obj2.sayHello()
+// just a plug
+export default () => {
 };

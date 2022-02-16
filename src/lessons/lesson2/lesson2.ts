@@ -83,7 +83,8 @@ console.log(makeCounters.set());
 console.log('Task 04*')
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
 // и что бы корректно работали следующие вызовы:
-// 1) superSum(0) //0
+
+ // 1) superSum(0) //0
 // 2) superSum(3)(2)(5)(3) //10
 // 3) superSum(3)(2)(5,3) //10
 // 4) superSum(3)(2,5,3) //10
@@ -91,137 +92,146 @@ console.log('Task 04*')
 // 6) superSum(3)(2,5)(3,9) //10
 
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore
-function superSum(num: number) {
-    if (num === 0) return 0;
-    if (num === 1) return (n: number) => n;
-
-    let _arguments: number[] = [];
-
-    function helper(...args: number[]) {
-        _arguments = [..._arguments, ...args];
-        if (_arguments.length >= num) {
-            _arguments.length=num;
-            return _arguments.reduce((acc,number)=>acc+number);
-        } else {
-            return helper;
-        }
-    }
-    return helper;
-}
-console.log(superSum(0))
-
-// @ts-ignore
-console.log(superSum(3)(2)(5)(3))
-// @ts-ignore
-console.log(superSum(3)(2)(5,3))
-// @ts-ignore
-console.log(superSum(3)(2,5,3))
-// @ts-ignore
-console.log(superSum(3)(2,5)(3))
-// @ts-ignore
-console.log(superSum(3)(2,5)(3,9))
-
+// function superSum(num: number) {
+//     if (num === 0) return 0;
+//     if (num === 1) return (n: number) => n;
+//
+//     let _arguments: number[] = [];
+//
+//     function helper(...args: number[]) {
+//         _arguments = [..._arguments, ...args];
+//         if (_arguments.length >= num) {
+//             _arguments.length=num;
+//             return _arguments.reduce((acc,number)=>acc+number);
+//         } else {
+//             return helper;
+//         }
+//     }
+//     return helper;
+// }
+// console.log(superSum(0))
+//
+// // @ts-ignore
+// console.log(superSum(3)(2)(5)(3))
+// // @ts-ignore
+// console.log(superSum(3)(2)(5,3))
+// // @ts-ignore
+// console.log(superSum(3)(2,5,3))
+// // @ts-ignore
+// console.log(superSum(3)(2,5)(3))
+// // @ts-ignore
+// console.log(superSum(3)(2,5)(3,9))
+//
 
 console.log('Task 05')
-// решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
-function sumTo(n:number){            //----------цикл
-    let result=0
-    for (let i=0;i<=n;i++){
-            result+=i
-    }
-    return  result
-}
-
-function sumTo2(n:number):number{           //---------рекурсия
-    return n===1?n:n+sumTo(n-1)
-}
-
-function sumTo3(n:number) {               //-----------арифметическая прогрессия
-    return n * (n + 1) / 2;
-}
-console.log(sumTo(100))
-console.log(sumTo2(100))
-console.log(sumTo3(100))
-
+// // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
+// function sumTo(n:number){            //----------цикл
+//     let result=0
+//     for (let i=0;i<=n;i++){
+//             result+=i
+//     }
+//     return  result
+// }
+//
+// function sumTo2(n:number):number{           //---------рекурсия
+//     return n===1?n:n+sumTo(n-1)
+// }
+//
+// function sumTo3(n:number) {               //-----------арифметическая прогрессия
+//     return n * (n + 1) / 2;
+// }
+// console.log(sumTo(100))
+// console.log(sumTo2(100))
+// console.log(sumTo3(100))
+//
 function factorial(n:number):number{
     return n===1?n:n*factorial(n-1)
 }
 console.log(factorial(5))
 
-function fibonachi(n:number):number{
-    return n<=1?n:fibonachi(n-1)+fibonachi(n-2)
-}
+// function fibonachi(n:number):number{
+//     return n<=1?n:fibonachi(n-1)+fibonachi(n-2)
+// }
+//
+// function fib(n:number) {
+//     let a = 1;
+//     let b = 1;
+//     for (let i = 3; i <= n; i++) {
+//         let c = a + b;
+//         a = b;
+//         b = c;
+//     }
+//     return b;
+// }
+//
+//
+// console.log(fibonachi(3))
+// console.log(fib(3))
+//
+// let list = {
+//     value: 1,
+//     next: {
+//         value: 2,
+//         next: {
+//             value: 3,
+//             next: {
+//                 value: 4,
+//                 next: null
+//             }
+//         }
+//     }
+// };
+// function printList(list:any) {
+//
+//     while (list) {
+//         console.log((list.value));
+//         list= list.next;
+//     }
+// }
+//
+// function printLists(lis:any) {
+//     console.log((list.value)); // выводим текущий элемент
+//
+//     if (list.next) {
+//         printList(list.next); // делаем то же самое для остальной части списка
+//     }
+// }
+// printList(list);
+// printLists(list);
+//
+// function printReverseList(list:any) {
+//
+//     if (list.next) {
+//         printReverseList(list.next);
+//     }
+//     alert(list.value);
+// }
+// function printReverseLists(list:any) {
+//     let arr = [];
+//     let tmp = list;
+//
+//     while (tmp) {
+//         arr.push(tmp.value);
+//         tmp = tmp.next;
+//     }
+//     for (let i = arr.length - 1; i >= 0; i--) {
+//         alert( arr[i] );
+//     }
+// }
+// printReverseList(list);
+// printReverseLists(list);
+ console.log("Task 06")
+// // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
+ function customFlat(arr: any):any {
+     //@ts-ignore
+     return arr.reduce((acc, current) => {
+         if(Array.isArray(current)) return acc.concat(customFlat(current))
+         return [...acc, current]
+     }, [])
+ }
+ let a = [1,2,3,[4,5,[6,7]]]
 
-function fib(n:number) {
-    let a = 1;
-    let b = 1;
-    for (let i = 3; i <= n; i++) {
-        let c = a + b;
-        a = b;
-        b = c;
-    }
-    return b;
-}
-
-
-console.log(fibonachi(3))
-console.log(fib(3))
-
-let list = {
-    value: 1,
-    next: {
-        value: 2,
-        next: {
-            value: 3,
-            next: {
-                value: 4,
-                next: null
-            }
-        }
-    }
-};
-function printList(list:any) {
-
-    while (list) {
-        console.log((list.value));
-        list= list.next;
-    }
-}
-
-function printLists(lis:any) {
-    console.log((list.value)); // выводим текущий элемент
-
-    if (list.next) {
-        printList(list.next); // делаем то же самое для остальной части списка
-    }
-}
-printList(list);
-printLists(list);
-
-function printReverseList(list:any) {
-
-    if (list.next) {
-        printReverseList(list.next);
-    }
-    alert(list.value);
-}
-function printReverseLists(list:any) {
-    let arr = [];
-    let tmp = list;
-
-    while (tmp) {
-        arr.push(tmp.value);
-        tmp = tmp.next;
-    }
-    for (let i = arr.length - 1; i >= 0; i--) {
-        alert( arr[i] );
-    }
-}
-printReverseList(list);
-printReverseLists(list);
-// Task 06
-// написать функцию, которая повторяет функционал метода flat массива на всю глубину.
-
+ console.log(customFlat(a))
 //just a plug
 export default () => {
 };
