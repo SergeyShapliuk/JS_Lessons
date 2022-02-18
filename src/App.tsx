@@ -8,6 +8,7 @@ import './App.css';
 //import './lessons/lesson5/lesson5';
 //import './lessons/lesson6/lesson6';
 import './lessons/lesson7/lesson7';
+import './lessons/lesson7/lesson_7.js';
 // import './lessons/lesson8/lesson8';
 
 function App() {
